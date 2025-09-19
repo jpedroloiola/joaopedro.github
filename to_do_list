@@ -1,0 +1,68 @@
+# to_do_list.py
+
+def mostrar_tarefas(tarefas):
+    if not tarefas:
+        print("\nNenhuma tarefa adicionada ainda.")
+    else:
+        print("\n📋 Suas tarefas:")
+        for i, tarefa in enumerate(tarefas, 1):
+            status = "✅" if tarefa['feito'] else "❌"
+            print(f"{i}. {tarefa['titulo']} [{status}]")
+
+def adicionar_tarefa(tarefas):
+    titulo = input("\nDigite o título da tarefa: ")
+    tarefas.append({"titulo": titulo, "feito": False})
+    print(f"Tarefa '{titulo}' adicionada!")
+
+def marcar_concluida(tarefas):
+    mostrar_tarefas(tarefas)
+    try:
+        indice = int(input("\nDigite o número da tarefa concluída: ")) - 1
+        if 0 <= indice < len(tarefas):
+            tarefas[indice]['feito'] = True
+            print(f"Tarefa '{tarefas[indice]['titulo']}' marcada como concluída!")
+        else:
+            print("Número inválido.")
+    except ValueError:
+        print("Por favor, digite um número válido.")
+
+def remover_tarefa(tarefas):
+    mostrar_tarefas(tarefas)
+    try:
+        indice = int(input("\nDigite o número da tarefa a remover: ")) - 1
+        if 0 <= indice < len(tarefas):
+            removida = tarefas.pop(indice)
+            print(f"Tarefa '{removida['titulo']}' removida!")
+        else:
+            print("Número inválido.")
+    except ValueError:
+        print("Por favor, digite um número válido.")
+
+def menu():
+    tarefas = []
+    while True:
+        print("\n=== To-do List ===")
+        print("1. Mostrar tarefas")
+        print("2. Adicionar tarefa")
+        print("3. Marcar tarefa como concluída")
+        print("4. Remover tarefa")
+        print("5. Sair")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            mostrar_tarefas(tarefas)
+        elif opcao == "2":
+            adicionar_tarefa(tarefas)
+        elif opcao == "3":
+            marcar_concluida(tarefas)
+        elif opcao == "4":
+            remover_tarefa(tarefas)
+        elif opcao == "5":
+            print("Saindo... até logo!")
+            break
+        else:
+            print("Opção inválida, tente novamente.")
+
+if __name__ == "__main__":
+    menu()
