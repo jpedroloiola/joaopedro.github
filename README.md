@@ -15,10 +15,3 @@ O usuário pode **adicionar, concluir e remover tarefas**, com interface intuiti
 
 ## 🛠️ Tecnologias utilizadas
 - **Python**   
-
----
-
-## 📂 Como executar o projeto
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/jpedroloiola/joaopedro.github
