@@ -14,9 +14,7 @@ O usuário pode **adicionar, concluir e remover tarefas**, com interface intuiti
 ---
 
 ## 🛠️ Tecnologias utilizadas
-- **HTML5**  
-- **CSS3**  
-- **JavaScript**  
+- **Python**   
 
 ---
 
